@@ -43,7 +43,7 @@ app.get("*", function(req, res) {
 
   axios.get(url + query, config).then(function(data) {
     // send back retreived data
-    res.status(200).send(data.data);
+    res.status(200).json(data.data);
   }).catch(function(err) {
     // preserve status code with error
     res.status(err.response.status).send(err.response.data);
